@@ -3,6 +3,8 @@ package ru.netology.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 
 public class CashbackHackerServiceTest {
     public CashbackHackerService service = new CashbackHackerService();
@@ -14,7 +16,7 @@ public class CashbackHackerServiceTest {
         int actual = service.remain(amount);
         int expected = 0;
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected, actual);
 
     }
 
@@ -25,7 +27,7 @@ public class CashbackHackerServiceTest {
         int actual = service.remain(amount);
         int expected = 300;
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected, actual);
 
     }
 
@@ -36,7 +38,7 @@ public class CashbackHackerServiceTest {
         int actual = service.remain(amount);
         int expected = 1000;
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected, actual);
 
     }
 
