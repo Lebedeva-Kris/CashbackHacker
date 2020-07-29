@@ -42,7 +42,20 @@ public class CashbackHackerServiceTest {
 
     }
 
+    @org.junit.jupiter.api.Test
+    public void shouldRemainIfAmountZeroJupiter() {
+        org.junit.jupiter.api.Assertions.assertEquals(1000, service.remain(0));
+    }
 
+    @org.junit.jupiter.api.Test
+    public void shouldRemainIfAmountLessThanBoundaryJupiter() {
+        org.junit.jupiter.api.Assertions.assertEquals(300, service.remain(700));
+    }
+
+    @org.junit.jupiter.api.Test
+    public void shouldRemainIfAmountBoundaryJupiter() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, service.remain(1000));
+    }
 
 
 }
