@@ -10,7 +10,7 @@ public class CashbackHackerServiceTest {
     public CashbackHackerService service = new CashbackHackerService();
 
     @Test
-    public void shouldCalculateCashbackIfPaymentBoundary() {
+    public void shouldRemainIfPaymentBoundary() {
         int amount = 1000;
 
         int actual = service.remain(amount);
@@ -21,7 +21,7 @@ public class CashbackHackerServiceTest {
     }
 
     @Test
-    public void shouldCalculateCashbackIfPaymentLessThanBoundary() {
+    public void shouldRemainIfPaymentLessThanBoundary() {
         int amount = 700;
 
         int actual = service.remain(amount);
@@ -32,7 +32,7 @@ public class CashbackHackerServiceTest {
     }
 
     @Test
-    public void shouldCalculateCashbackIfPaymentZero() {
+    public void shouldRemainIfPaymentZero() {
         int amount = 0;
 
         int actual = service.remain(amount);
@@ -41,6 +41,8 @@ public class CashbackHackerServiceTest {
         assertEquals(expected, actual);
 
     }
+
+
 
 
 }
