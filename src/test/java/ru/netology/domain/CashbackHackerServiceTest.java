@@ -12,18 +12,7 @@ public class CashbackHackerServiceTest {
         int amount = 1000;
 
         int actual = service.remain(amount);
-        int expected = 1000;
-
-        Assert.assertEquals(actual, expected);
-
-    }
-
-    @Test
-    public void shouldCalculateCashbackIfPaymentMoreThanBoundary() {
-        int amount = 3000;
-
-        int actual = service.remain(amount);
-        int expected = 1000;
+        int expected = 0;
 
         Assert.assertEquals(actual, expected);
 
@@ -39,4 +28,17 @@ public class CashbackHackerServiceTest {
         Assert.assertEquals(actual, expected);
 
     }
+
+    @Test
+    public void shouldCalculateCashbackIfPaymentZero() {
+        int amount = 0;
+
+        int actual = service.remain(amount);
+        int expected = 1000;
+
+        Assert.assertEquals(actual, expected);
+
+    }
+
+
 }
